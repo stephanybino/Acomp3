@@ -6,17 +6,38 @@ namespace Acomp3
     {
         public void Part(int[] E, int left, int right)
         {
-            throw new NotImplementedException();
+            int c = E[right]; //pivô
+            int t, j = left;
+            for (int k = left; k < right; k++)
+            {
+                if (E[k] <= c)
+                {
+                    t = E[j];
+                    E[j] = E[k];
+                    E[k] = t;
+                    j++;
+                }
+           
+            }
+            t = E[j];
+            E[j] = E[right];
+            E[right] = t;
+            return j;
         }
 
         public void Sort(int[] E, int left, int right)
         {
-            throw new NotImplementedException();
+           if ( left < right)
+            {
+                int b = Part(E, left, right);
+                Sort(E, left, b-1);
+                Sort(E, b+1, right);
+            }
         }
 
         public void Sort(int[] E, int n)
         {
-            throw new NotImplementedException();
+             Sort(E, 0, n - 1); 
         }
     }
 }
