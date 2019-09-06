@@ -4,7 +4,7 @@ namespace Acomp3
 {
     class TailQuickSort : IQuickSort
     {
-        public void Part(int[] E, int left, int right)
+        public int Part(int[] E, int left, int right)
         {
             int c = E[right]; //pivô
             int t, j = left;
